@@ -1198,11 +1198,11 @@ private _fnc_spawnWaypoint = {
 	_wp = _group addWaypoint[ ASLToATL _position, _placement, count waypoints _group, _name];
 	_wp setWaypointType _type;
 	_wp setWaypointCompletionRadius _compRadius;
-	_wp setWaypointCombatMode _mode;
-	_wp setWaypointFormation _formation;
-	_wp setWaypointSpeed _speed;
-	_wp setWaypointBehaviour _behaviour;
-	_wp setWaypointDescription _description;
+	if (_mode != "") then {_wp setWaypointCombatMode _mode};
+	if (_formation != "") then {_wp setWaypointFormation _formation};
+	if (_speed != "") then {_wp setWaypointSpeed _speed};
+	if (_behaviour != "") then {_wp setWaypointBehaviour _behaviour};
+	if (_description != "") then {_wp setWaypointDescription _description};
 	_wp setWaypointStatements[ _condition, _onAct ];
 	_wp setWaypointTimeout _timeout;
 	_wp showWaypoint _show;
